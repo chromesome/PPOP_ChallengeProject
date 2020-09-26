@@ -37,7 +37,7 @@ public class Grid : MonoBehaviour
             offset = hexWidth / 2;
 
         float x = startPosition.x + gridPosition.x * hexWidth + offset;
-        float z = startPosition.z - gridPosition.y * hexHeight * 0.75f;
+        float z = startPosition.z - gridPosition.z * hexHeight * 0.75f;
 
         return new Vector3(x, 0, z);
     }
