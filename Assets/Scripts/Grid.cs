@@ -6,6 +6,8 @@ using UnityEngine;
 public class Grid : MonoBehaviour
 {
     public Transform hexPrefab;
+    [SerializeField] private TileFactory _tileFactory;
+
 
     public int gridWidth = 8;
     public int gridHeigh = 8;
@@ -61,11 +63,11 @@ public class Grid : MonoBehaviour
         {
             for (int x = 0; x < gridWidth; x++)
             {
-                Transform hex = Instantiate(hexPrefab) as Transform;
+                Tile hex = _tileFactory.CreateRandomTile();
                 Vector2 gridPosition = new Vector2(x, y);
-                hex.position = CalculateWorldPosition(gridPosition);
-                hex.parent = this.transform;
-                hex.name = "Hexagon" + x + "|" + y;
+                hex.transform.position = CalculateWorldPosition(gridPosition);
+                hex.transform.parent = this.transform;
+                hex.name = hex.name + "Hexagon" + x + "|" + y;
             }
         }
     }

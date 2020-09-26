@@ -308,6 +308,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1522582672}
   - component: {fileID: 1522582671}
+  - component: {fileID: 1522582673}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -328,8 +329,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hexPrefab: {fileID: 3183681571708032790, guid: 928a13cf71bafb2429112d6e5ba9f097, type: 3}
-  gridWidth: 8
-  gridHeigh: 8
+  _tileFactory: {fileID: 1522582673}
+  gridWidth: 10
+  gridHeigh: 10
   gap: 0
 --- !u!4 &1522582672
 Transform:
@@ -345,3 +347,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1522582673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522582670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d06fd92c91e71447b40a489651433e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilePrefabs:
+  - {fileID: 4147463122368831541, guid: 79af86a2366e5b8448a676c0a1330586, type: 3}
+  - {fileID: 5050301281998912538, guid: 3e7904106f2741f49905e92f3ec640b5, type: 3}
+  - {fileID: 628821427998165106, guid: 928a13cf71bafb2429112d6e5ba9f097, type: 3}
+  - {fileID: 2162203428194120239, guid: 3fc2f89116114ee45ae95c2c1a9fd07d, type: 3}
+  - {fileID: 8715896561993233369, guid: 05698d95702ef6d4fa84d0b21cea1f49, type: 3}
