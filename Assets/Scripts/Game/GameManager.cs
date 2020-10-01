@@ -27,6 +27,10 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    /// <summary>
+    ///     A tile was selected.
+    /// </summary>
+    /// <param name="tile">Selected tile</param>
     public void TileSelected(Tile tile)
     {
         Debug.Log("Selected Start tile: " + tile.name);
@@ -52,6 +56,10 @@ public class GameManager : MonoBehaviour
             FindPath();
         }
     }
+
+    /// <summary>
+    ///     Find closest path from start to target.
+    /// </summary>
     private void FindPath()
     {
         IList<PathFinding.IAStarNode> path = PathFinding.AStar.GetPath(_startTile, _targetTile);
@@ -69,6 +77,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    ///     Reset traversed path
+    /// </summary>
     private void ResetPath()
     {
         foreach (Tile tile in _traversedPath)

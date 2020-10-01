@@ -37,7 +37,6 @@ public class Tile : MonoBehaviour, IAStarNode
         }
     }
 
-
     private void Awake()
     {
         _neighbourTiles = new List<Tile>();
@@ -46,13 +45,14 @@ public class Tile : MonoBehaviour, IAStarNode
     public float CostTo(IAStarNode neighbour)
     {
         Tile neighbourHex = neighbour as Tile;
-        if(neighbourHex != null)
+
+        Debug.Assert(neighbourHex != null, "Neighbour is not a Tile");
+        if (neighbourHex != null)
         {
             return neighbourHex.TraverseCost;
         }
         else
         {
-            // TODO: review this
             throw new System.Exception("Neighbour is not a Tile");
         }
     }
@@ -61,6 +61,7 @@ public class Tile : MonoBehaviour, IAStarNode
     {
         Tile targetHex = target as Tile;
 
+        Debug.Assert(targetHex != null, "Neighbour is not a Tile");
         if (targetHex != null)
         {
             int xDistance = Mathf.Abs(this.X - targetHex.X);
@@ -70,7 +71,7 @@ public class Tile : MonoBehaviour, IAStarNode
         }
         else
         {
-            //TODO: Excepcion o me estoy perdiendo algo?
+            // TODO: handle gracefully
             throw new System.Exception("Target is not a tile");
         }
     }
@@ -85,6 +86,9 @@ public class Tile : MonoBehaviour, IAStarNode
         Select();
     }
 
+    /// <summary>
+    ///     Set tile as selected.
+    /// </summary>
     public void Select()
     {
         if(traversable)
@@ -99,6 +103,9 @@ public class Tile : MonoBehaviour, IAStarNode
         }
     }
 
+    /// <summary>
+    ///     Tile was traversed, we are going places
+    /// </summary>
     public void Traverse()
     {
         if(!_selected)
@@ -111,12 +118,18 @@ public class Tile : MonoBehaviour, IAStarNode
         }
     }
 
+    /// <summary>
+    ///     Set tile as unselected
+    /// </summary>
     public void UnSelect()
     {
         HighlightTile(Color.white);
         _selected = false;
     }
 
+    /// <summary>
+    ///     Change tile material color
+    /// </summary>
     private void HighlightTile(Color color)
     {
         Renderer renderer = this.GetComponent<Renderer>();

@@ -34,6 +34,7 @@ public class TileFactory : MonoBehaviour
         }
         else
         {
+            Debug.Assert(true, "Tile type was not defined in dictionary");
             throw new System.Exception("Tile type not found");
         }
     }
