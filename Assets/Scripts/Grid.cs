@@ -65,6 +65,7 @@ public class Grid : MonoBehaviour
 
         for (int x = 0; x < gridHeigh; x++)
         {
+            tiles[x] = new Tile[gridHeigh];
             for (int y = 0; y < gridWidth; y++)
             {
                 Tile hex = _tileFactory.CreateRandomTile();
@@ -85,7 +86,7 @@ public class Grid : MonoBehaviour
         {
             for (int x = 0; x < gridWidth; x++)
             {
-                // dasdasd
+                // TODO check surrounding tiles
             }
         }
     }
