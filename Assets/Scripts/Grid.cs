@@ -151,6 +151,11 @@ public class Grid : MonoBehaviour
         }
     }
 
+    /// <summary>
+    ///     Set neighbourhood between tiles
+    /// </summary>
+    /// <param name="tile"></param>
+    /// <param name="neighbour"></param>
     private static void LinkNeighbours(Tile tile, Tile neighbour)
     {
         tile.AddNeighbour(neighbour);

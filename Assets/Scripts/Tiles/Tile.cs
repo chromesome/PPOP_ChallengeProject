@@ -5,12 +5,15 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour, IAStarNode
 {
+    // public variables
+    public bool traversable;
+
     // private variables
     [SerializeField] string _tileType;
     [SerializeField] int _traverseCost;
-    [SerializeField] bool _traversable;
     int _x;
     int _y;
+    bool _selected;
     private List<Tile> _neighbourTiles;
 
     // getter and setters
@@ -25,7 +28,7 @@ public class Tile : MonoBehaviour, IAStarNode
         {
             foreach(Tile tile in _neighbourTiles)
             {
-                if (tile._traversable)
+                if (tile.traversable)
                 {
                     yield return tile;
                 }
@@ -75,5 +78,48 @@ public class Tile : MonoBehaviour, IAStarNode
     public void AddNeighbour(Tile neighbour)
     {
         _neighbourTiles.Add(neighbour);
+    }
+
+    private void OnMouseDown()
+    {
+        Select();
+    }
+
+    public void Select()
+    {
+        if(traversable)
+        {
+            if(!_selected)
+            {
+                _selected = true;
+                GameManager.instance.TileSelected(this);
+            }
+
+            HighlightTile(Color.green);
+        }
+    }
+
+    public void Traverse()
+    {
+        if(!_selected)
+        {
+            HighlightTile(Color.red);
+        }
+        else
+        {
+            HighlightTile(Color.green);
+        }
+    }
+
+    public void UnSelect()
+    {
+        HighlightTile(Color.white);
+        _selected = false;
+    }
+
+    private void HighlightTile(Color color)
+    {
+        Renderer renderer = this.GetComponent<Renderer>();
+        renderer.material.color = color;
     }
 }
