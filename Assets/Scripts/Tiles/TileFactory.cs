@@ -19,6 +19,11 @@ public class TileFactory : MonoBehaviour
         }
     }
 
+    /// <summary>
+    ///     Instantiate new Tile for request id.
+    /// </summary>
+    /// <param name="id">Tile type id</param>
+    /// <returns>Tile</returns>
     public Tile CreateNewTile(string id)
     {
         Tile newTile;
@@ -33,6 +38,11 @@ public class TileFactory : MonoBehaviour
         }
     }
 
+    /// <summary>
+    ///     Instantiate a random tile from dictionary
+    /// </summary>
+    /// <param name="id">Tile type id</param>
+    /// <returns>Tile</returns>
     public Tile CreateRandomTile()
     {
         int randomKey = Random.Range(0, tileDictionary.Count);
