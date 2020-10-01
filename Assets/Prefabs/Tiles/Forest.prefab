@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 3799845836364871126}
   - component: {fileID: 221828887289100915}
   - component: {fileID: 2661890693246062265}
-  - component: {fileID: 5050301281998912538}
+  - component: {fileID: 873764121686979507}
+  - component: {fileID: -2062851848031177736}
   m_Layer: 0
   m_Name: Forest
   m_TagString: Untagged
@@ -82,7 +83,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5050301281998912538
+--- !u!114 &873764121686979507
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,8 +92,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 4607203357964513132}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 784583ede2848b84d84d72bf44e59500, type: 3}
+  m_Script: {fileID: 11500000, guid: 48d71daa0b9683e41a4238076cd700fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  traversable: 1
   _tileType: forest
   _traverseCost: 3
+--- !u!64 &-2062851848031177736
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4607203357964513132}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2190622540023885545, guid: 8a86ebc104ee7664894ec2a3d3675de8, type: 3}

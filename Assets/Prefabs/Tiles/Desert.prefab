@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 8126318341086133504}
   - component: {fileID: 5145820987440312997}
   - component: {fileID: 6957313366749726319}
-  - component: {fileID: 4147463122368831541}
+  - component: {fileID: 8344914210371650743}
+  - component: {fileID: 4256213663253048602}
   m_Layer: 0
   m_Name: Desert
   m_TagString: Untagged
@@ -82,7 +83,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &4147463122368831541
+--- !u!114 &8344914210371650743
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,10 +92,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 8902960971822032826}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 784583ede2848b84d84d72bf44e59500, type: 3}
+  m_Script: {fileID: 11500000, guid: 48d71daa0b9683e41a4238076cd700fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  traversable: 1
   _tileType: desert
-  x: 0
-  y: 0
   _traverseCost: 5
+--- !u!64 &4256213663253048602
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8902960971822032826}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2190622540023885545, guid: 8a86ebc104ee7664894ec2a3d3675de8, type: 3}
