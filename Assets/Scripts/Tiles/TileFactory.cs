@@ -35,7 +35,7 @@ public class TileFactory : MonoBehaviour
 
     public Tile CreateRandomTile()
     {
-        int randomKey = Random.Range(0, tileDictionary.Count);
+        int randomKey = Random.Range(0, tileDictionary.Count - 1);
 
         return Instantiate(tileDictionary.Values.ElementAt(randomKey));
     }

@@ -7,8 +7,5 @@ public class Tile : MonoBehaviour
 {
     [SerializeField] private string _tileType;
     public string TileType { get => _tileType; }
-
-    public int x;
-    public int y;
     
 }

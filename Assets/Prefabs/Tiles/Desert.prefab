@@ -95,6 +95,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tileType: desert
-  x: 0
-  y: 0
   _traverseCost: 5
